@@ -1,7 +1,7 @@
 # added 2019-08-15
 # 隐藏所有 matlab 文件
 /Matlab
-/.Materials
+./.Materials
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
