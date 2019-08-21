@@ -38,10 +38,10 @@ def main():
 
 
     ## Add your codes to  classify normal and diseases.
-    model01_path = '/media/uuser/data/final_run/model/model_01.h5'
-    model02_path = '/media/uuser/data/final_run/model/model_02.h5'
-    modelxg_path = '/media/uuser/data/final_run/model/model.pkl'
-    feature_path = '/media/uuser/data/final_run/data/feature.csv'
+    model01_path = './model/model_01.h5'
+    #model02_path = '/media/uuser/data/final_run/model/model_02.h5'
+    #modelxg_path = './model/model.pkl'
+    #feature_path = './data/feature.csv'
 
     keysname = ('I','II','III','aVR','aVL','aVF', \
     'V1','V2','V3','V4','V5','V6','age','sex')

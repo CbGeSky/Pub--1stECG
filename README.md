@@ -1,7 +1,8 @@
 # 首届中国心电智能大赛--决赛阶段 Public Version
 
 >说明  
->首届中国心电智能大赛决赛 公开发布版 网址 http://mdi.ids.tsinghua.edu.cn/  
+>首届中国心电智能大赛决赛 公开发布版  
+>比赛网址 http://mdi.ids.tsinghua.edu.cn/  
 >由于比赛自身的性质，本项目包含的内容仅限于本团队提出的最终决赛阶段的解决方案，任何有关数据的问题请直接与大赛主办方联系。
 
 ## 问题描述
@@ -18,8 +19,6 @@
 
 心电数据存为MAT格式。其中存储了12个导联的电压信号（包含了I, II, III, aVR, aVL, aVF, V1, V2, V3, V4, V5和V6），同时也包含了性别和年龄等变量。电压单位为毫伏，采样率为500赫兹。训练数据对应的标签存储在REFERENCE.csv文件中，各类别编号和英文缩写如下表所示。
 
-<div align=center>
-
 | 编号 | 类别 | 英文缩写 |
 | :------| :------: | :------: |
 | 0 | 正常心电 | Normal |
@@ -32,8 +31,6 @@
 | 7 | 早期复极图形改变 | ER |
 | 8 | T波改变 | TWC |
 | 9 | 其它类别 | OTHERS |
-
-</div>
 
 ### 评价指标
 
@@ -76,6 +73,25 @@
 
 >final_codes文件夹下包括了思路二(raw ECG + Deeplearning)的主要代码
 
+### Dependencies
+
+Packages
+
+    python 3.6+
+    numpy
+    pandas
+    scipy
+    scikit-learn
+    scikit-multilearn
+    xgboost
+    tensorflow
+    keras
+
+Hardwares
+
+    gpu (not necessary, better if have)
+    enough memory
+
 总体目录树结构(下面的代码是提交用于测试结果的最终代码，由于不包含模型文件，提供了一个train文件作为替代之用)
 
     提交的代码文件由下面的文件组成
@@ -85,12 +101,16 @@
     |__ f_preprocess.py 包含一些预处理的过程
     |__ README.txt      简单的说明，未编辑
     |__ run.sh          shell下的执行文件，用于给定测试集位置参数执行chanllenge.py生成answer.csv, 用以结果评测。
+    |__ model           模型存放位置
+      |__ model_01.h5   训练得到的模型，模型结构定义见f_model
 
-    |__ f_train.py      由于不包含模型文件，上述代码无法使用，故提供了一个train文件用于自行训练得到模型测试结果。
+    |__ f_train.py      模型训练，是不包含在提交代码中的，提供可用于自行训练得到模型测试结果。
 
-文件执行逻辑：
+代码执行：
 
-由run.sh指定测试集路径，在shell下调用执行challeng.py文件生成answers.csv用于结果评价。后续等大赛组委会安排，模型文件拿到之后上传上来就可以直接使用了。
+* 由run.sh指定测试集路径，在shell下调用执行challeng.py文件生成answers.csv用于结果评价。
+
+* train.py可用于模型训练
 
 ## 决赛结束之后
 

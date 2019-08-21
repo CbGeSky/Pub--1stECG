@@ -33,7 +33,7 @@ start=$(date +%s.%N)
 #python challenge.py --test_path /media/jdcloud/Val
 
 #因为python环境用的是venv不是conda，可能需要source激活一下
-source /media/uuser/data
+source /media/uuser/data/01_Project/venv/bin/activate
 matlab -nodesktop -nosplash -r "userpath=/media/uuser/data/final_run/; test_path=/media/jdcloud/Val/; run_matlab"
 python challenge.py --test_path /media/jdcloud/Val/
 
